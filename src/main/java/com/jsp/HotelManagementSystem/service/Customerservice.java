@@ -82,5 +82,18 @@ public class Customerservice {
 		return customerdao.getallCustomer();
 	}
 	
+	public Customer loginCustomer(String email, String password)
+	{
+		Customer customer=customerdao.getCustomerbyemail(email);
+		if(customer.getCustomer_password().equals(password))
+		{
+			return customer;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
 	
 }

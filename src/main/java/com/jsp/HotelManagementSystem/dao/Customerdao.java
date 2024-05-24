@@ -40,7 +40,7 @@ public class Customerdao {
 		return null;
 	}
 	
-	public Customer getCustomerbyrmail(String customer_email)
+	public Customer getCustomerbyemail(String customer_email)
 	{
 		if(customerrepo.getCustomerbyemail(customer_email)!=null)
 		{
