@@ -63,10 +63,5 @@ public class Customercontroller {
 	{
 		return customerservice.loginCustomer(email, password);
 	}
-	
-	
-	
-	
-	
-	
+		
 }

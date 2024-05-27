@@ -43,10 +43,4 @@ public class Hotelcontroller {
 		return hotelservice.getHotelbyid(hid);
 	}
 	 
-	
-	
-	
-	
-	
-	
 }
