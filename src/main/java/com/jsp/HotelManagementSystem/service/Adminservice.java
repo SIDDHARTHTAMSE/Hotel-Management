@@ -101,6 +101,7 @@ public class Adminservice {
 			responsestructure.setData(admindao.getalladmin());
 			return new ResponseEntity<Responsestructure<List<Admin>>>(responsestructure, HttpStatus.FOUND);
 		}
+		return null;
 	}
 	
 	public ResponseEntity<Responsestructure<Admin>> loginAdmin(String email, String password)

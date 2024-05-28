@@ -19,7 +19,7 @@ public class Room {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int room_id;
-	private int room_no;
+	private String room_no;
 	private String room_type;
 	private int room_price;
 	private int no_beds;

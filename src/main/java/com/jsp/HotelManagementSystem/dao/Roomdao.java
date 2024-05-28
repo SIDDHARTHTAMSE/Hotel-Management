@@ -45,7 +45,7 @@ public class Roomdao {
 		return roomrepo.findAll();
 	}
 	
-	public Room getRoombyno(int room_no)
+	public Room getRoombyno(String room_no)
 	{
 		if (roomrepo.getRoombyno(room_no)!=null) 
 		{

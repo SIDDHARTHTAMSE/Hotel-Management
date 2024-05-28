@@ -105,7 +105,7 @@ public class Roomservice {
 			return null;
 		}
 	}
-	public ResponseEntity<Responsestructure<Room>> getRoombyno(int room_no)
+	public ResponseEntity<Responsestructure<Room>> getRoombyno(String room_no)
 	{
 		Room room=roomdao.getRoombyno(room_no);
 		if(room!=null)

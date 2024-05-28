@@ -13,7 +13,7 @@ public interface Roomrepo extends JpaRepository<Room, Integer> {
 	public Room getRoombyid(int rid);
 	
 	@Query("select r from Room r where r.room_no=?1")
-	public Room getRoombyno(int room_no);
+	public Room getRoombyno(String room_no);
 	
 	@Query("select r from Room r where r.room_type=?1")
 	public List<Room> getRoombytype(String room_type);

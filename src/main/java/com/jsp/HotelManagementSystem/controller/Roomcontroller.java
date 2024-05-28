@@ -3,6 +3,7 @@ package com.jsp.HotelManagementSystem.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jsp.HotelManagementSystem.dto.Room;
 import com.jsp.HotelManagementSystem.service.Roomservice;
+import com.jsp.HotelManagementSystem.util.Responsestructure;
 
 @Controller
 @RequestMapping("/room")
@@ -23,49 +25,49 @@ public class Roomcontroller {
 	private Roomservice roomservice;
 	
 	@PostMapping
-	public Room saveRoom(@RequestBody Room room, @RequestParam int hid)
+	public ResponseEntity<Responsestructure<Room>> saveRoom(@RequestBody Room room, @RequestParam int hid)
 	{
 		return roomservice.saveRoom(room, hid);
 	}
 	
 	@PutMapping
-	public Room updateRoom(@RequestParam int rid, @RequestBody Room room)
+	public ResponseEntity<Responsestructure<Room>> updateRoom(@RequestParam int rid, @RequestBody Room room)
 	{
 		return roomservice.updateRoom(rid, room);
 	}
 	
 	@DeleteMapping
-	public Room deleteRoom(@RequestParam int rid)
+	public ResponseEntity<Responsestructure<Room>> deleteRoom(@RequestParam int rid)
 	{
 		return roomservice.deleteRoom(rid);
 	}
 	
 	@GetMapping
-	public Room getRoombyid(@RequestParam int rid)
+	public ResponseEntity<Responsestructure<Room>> getRoombyid(@RequestParam int rid)
 	{
 		return roomservice.getRoombyid(rid);
 	}
 	
 	@GetMapping("/roombyno")
-	public Room getRoomno(@RequestParam int room_no)
+	public ResponseEntity<Responsestructure<Room>> getRoomno(@RequestParam String room_no)
 	{
-		return roomservice.getRoombyid(room_no);
+		return roomservice.getRoombyno(room_no);
 	}
 	
 	@GetMapping("/roombytype")
-	public List<Room> getroombytype(@RequestParam String room_type)
+	public ResponseEntity<Responsestructure<List<Room>>> getroombytype(@RequestParam String room_type)
 	{
 		return roomservice.getRoombytype(room_type);
 	}
 	
 	@GetMapping("/roombyavailability")
-	public List<Room> getRoombyavailability(@RequestParam String availability)
+	public ResponseEntity<Responsestructure<List<Room>>> getRoombyavailability(@RequestParam String availability)
 	{
 		return roomservice.getRoombyavailability(availability);
 	}
 	
 	@GetMapping("/getallrooms")
-	public List<Room> getallRooms()
+	public ResponseEntity<Responsestructure<List<Room>>> getallRooms()
 	{
 		return roomservice.getallRooms();
 	}
