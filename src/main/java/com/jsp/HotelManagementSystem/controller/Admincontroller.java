@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jsp.HotelManagementSystem.dto.Admin;
-import com.jsp.HotelManagementSystem.service.Adminservice;
+import com.jsp.HotelManagementSystem.service.AdminService;
 import com.jsp.HotelManagementSystem.util.Responsestructure;
 
 @RestController
@@ -22,7 +22,7 @@ import com.jsp.HotelManagementSystem.util.Responsestructure;
 public class Admincontroller {
 	
 	@Autowired
-	private Adminservice adminservice;
+	private AdminService adminservice;
 	
 	@PostMapping
 	public ResponseEntity<Responsestructure<Admin>> saveAdmin(@RequestBody Admin admin, @RequestParam int hid)
